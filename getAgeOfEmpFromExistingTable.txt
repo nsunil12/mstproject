@@ -1,0 +1,14 @@
+create or replace function agec
+(feid in eb9.id%type)
+return number
+is
+sdate date;
+tdate date;
+diff number(8);
+begin
+select sysdate into sdate from dual;
+select dob into tdate from eb9 where id=feid;
+diff:=(sdate-tdate)/365;
+return diff;
+end;
+/

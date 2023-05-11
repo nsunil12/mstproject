@@ -1,0 +1,11 @@
+download the apache tomcat
+the we give the port number (ex : 8080)
+then to set the path to follow the pdf order
+
+execute like this : localhost:portnumber/projectfoldername/filename.html
+
+ex: localhost:8080/appilicationex/welcome.html
+
+2: localhost:8080/apllilicationex
+
+suppose above url can execute only index.html file that present in the folder.

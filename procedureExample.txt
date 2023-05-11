@@ -1,0 +1,44 @@
+#creating the call procedure in java
+--> First we create the procedure in the database
+Like this:
+
+
+SQL> create table employee_577(EID int,ENAME varchar(30),EDEPT varchar(20),DOB date);
+
+Table created.
+
+SQL> select * from employee_577;
+
+no rows selected
+
+SQL> describe employee_577;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(38)
+ ENAME                                              VARCHAR2(30)
+ EDEPT                                              VARCHAR2(20)
+ DOB                                                DATE
+
+//Creation the procedure
+
+
+SQL> create or replace procedure myprod(pid in employee_577.EID%TYPE,pname in employee_577.ENAME%TYP
+E,pdept in employee_577.EDEPT%TYPE,pdob in employee_577.DOB%TYPE)
+  2  IS
+  3  BEGIN
+  4  INSERT INTO employee_577 values(pid,pname,pdept,pdob);
+  5  END;
+  6  /
+
+Procedure created.
+
+//After creating the procedure we can implement the java code and see the result.
+
+
+SQL> select * from employee_577;
+
+       EID ENAME                          EDEPT                DOB
+---------- ------------------------------ -------------------- ---------
+       101 yaswanth                       CSE                  12-MAR-23
+       102 subbu                          ECE                  02-FEB-23
+
